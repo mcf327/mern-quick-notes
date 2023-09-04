@@ -1,0 +1,25 @@
+.new-note-form {
+    display: grid;
+    align-items: center;
+    justify-content: center; 
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.note-input {
+    width: 250px; 
+    height: 130px;
+    padding: 8px;
+    margin: 0 auto;
+}
+  
+.add-note-button {
+    width: 50%; 
+    padding: 8px;
+    margin: 0 auto; 
+}

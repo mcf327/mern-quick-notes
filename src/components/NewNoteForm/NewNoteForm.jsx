@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as notesAPI from '../../utilities/notes-api';
+import './NewNoteForm.css';
 
 export default function NewNoteForm({ handleAddNote }) {
     const [noteText, setNoteText] = useState('');
@@ -16,17 +17,17 @@ export default function NewNoteForm({ handleAddNote }) {
     }
     
     return (
-       <> 
-        <p>Add a new note: </p>
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
+       <div className="new-note-form"> 
+         <p>Add a new note: </p>
+         <form onSubmit={handleSubmit} className="input-box">
+            <textarea
+                className="note-input"
                 placeholder="Enter your note..."
                 value={noteText}
                 onChange={(evt) => setNoteText(evt.target.value)}
-            />
-            <button type="submit">Add Note</button>
-        </form>
-       </> 
+            ></textarea>
+            <button type="submit" className="add-note-button">Add Note</button>
+         </form>
+       </div> 
     );
 }
