@@ -5,29 +5,35 @@
 }
 
 .note {
-width: 300px;
-height: 300px; 
-padding: 10px;
-background-color: #fffcba;
-border: 1px solid #ffea00; 
-border-radius: 8px;
-text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-margin: 0 auto;
-margin-top: 25px;
-word-wrap: break-word;
+    width: 300px;
+    height: 300px; 
+    padding: 10px;
+    background-color: #fffcba;
+    border: 1px solid #ffea00; 
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 25px;
+    word-wrap: break-word;
 }
 
 .note-content {
-flex-grow: 1;
-overflow: hidden;
+    flex-grow: 1;
+    overflow: hidden;
 }
 
 .note-date {
-font-size: 12px;
-color: #333;
+    font-size: 12px;
+    color: #333;
+}
+
+.note-buttons {
+    display: flex;
+    justify-content: center;
+    bottom: 5px;
 }
 
 .delete-button {

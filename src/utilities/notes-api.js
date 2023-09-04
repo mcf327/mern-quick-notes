@@ -12,4 +12,9 @@ export function createNote(noteData) {
 
 export function deleteNote(noteId) {
     return sendRequest(`${BASE_URL}/delete/${noteId}`, 'DELETE');
-  }
+}
+
+export async function updateNote(noteId, updatedData) {
+    const updatedNote = await sendRequest(`${BASE_URL}/update/${noteId}`, 'PUT', updatedData);
+    return updatedNote.data;
+}
