@@ -9,6 +9,7 @@ export default function MyNotesPage() {
   useEffect(function() {
     async function getNotes() {
       const notes = await notesAPI.getAll();
+      console.log("Notes: ", notes);
       setNotes(notes);
     }
     getNotes();
@@ -27,7 +28,7 @@ export default function MyNotesPage() {
       ) : (
         <ul>
           {notes.map((note) => (
-            <li>
+            <li key={note._id}>
               {note.text} - {new Date(note.createdAt).toLocaleString()}
             </li>
           ))}
