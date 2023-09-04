@@ -5,6 +5,15 @@ async function getNotes(req, res) {
     res.json(notes);
 }
 
+async function createNote(req, res) {
+    const note = await Note.create({
+        text: req.body.text,
+        user: req.user._id
+    });
+    res.json(note);
+}
+
 module.exports = {
-    getNotes
+    getNotes,
+    createNote
 }
