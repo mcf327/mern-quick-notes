@@ -13,7 +13,12 @@ async function createNote(req, res) {
     res.json(note);
 }
 
+async function deleteNote(req, res) {
+    await Note.findByIdAndRemove(req.params.id);
+}
+
 module.exports = {
     getNotes,
-    createNote
+    createNote,
+    deleteNote
 }

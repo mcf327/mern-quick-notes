@@ -7,6 +7,7 @@ export default function NewNoteForm({ handleAddNote }) {
 
     async function handleSubmit(evt) {
         evt.preventDefault();
+        if (noteText === '') return;
         try {
             const newNote = await notesAPI.createNote({ text: noteText });
             setNoteText('');

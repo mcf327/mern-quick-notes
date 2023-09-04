@@ -9,3 +9,7 @@ export function getAll() {
 export function createNote(noteData) {
     return sendRequest(`${BASE_URL}/create`, 'POST', noteData);
 }
+
+export function deleteNote(noteId) {
+    return sendRequest(`${BASE_URL}/delete/${noteId}`, 'DELETE');
+  }

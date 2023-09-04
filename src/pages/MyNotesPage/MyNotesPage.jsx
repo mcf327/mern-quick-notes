@@ -21,6 +21,11 @@ export default function MyNotesPage() {
     setNotes([...notes, newNote]);
   }
 
+  async function handleDeleteNote(noteId) {
+    setNotes(notes.filter((note) => note._id !== noteId));
+    await notesAPI.deleteNote(noteId);
+  }
+
   function toggleSortOrder() {
     const newSortOrder = sortOrder === 'ascending' ? 'descending' : 'ascending';
     setSortOrder(newSortOrder);
@@ -48,6 +53,9 @@ export default function MyNotesPage() {
           {notes.map((note) => (
             <div key={note._id} className="note">
               {note.text} - {new Date(note.createdAt).toLocaleString()}
+              <button className="delete-button" onClick={() => handleDeleteNote(note._id)}>
+                Delete
+              </button>
             </div>
           ))}
         </ul>
